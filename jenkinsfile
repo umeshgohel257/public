@@ -14,5 +14,17 @@ pipeline {
             }
         }
     }
+        post {
+        success {
+            mail to: 'gohelu67@gmail.com',
+                 subject: "Job Successful - Umesh JSN: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "Great news! The job succeeded.\nCheck it here: ${env.BUILD_URL}"
+        }
+        failure {
+            mail to: 'gohelu67@gmail.com',
+                 subject: "Job Failed: umesh JSN ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "Oops! Something went wrong.\nCheck details here: ${env.BUILD_URL}"
+        }
+    }
 }
 
