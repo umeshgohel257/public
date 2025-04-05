@@ -1,0 +1,9 @@
+node{
+  stage('first job'){
+    echo "this is first pipeline"
+}
+stage("second){
+echo " this is second line"
+}
+}
+
