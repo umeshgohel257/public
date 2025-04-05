@@ -1,9 +1,18 @@
-node{
-  stage('first job'){
-    echo "this is first pipeline"
-}
-stage('second'){
-echo " this is second line"
-}
+pipeline {
+    agent any
+
+    stages {
+        stage('First Job') {
+            steps {
+                echo "This is the first pipeline stage"
+            }
+        }
+
+        stage('Second') {
+            steps {
+                echo "This is the second stage"
+            }
+        }
+    }
 }
 
